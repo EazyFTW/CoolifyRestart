@@ -23,7 +23,7 @@ def restart_services():
             continue
             
         print(f"Triggering restart for UUID: {uuid}...")
-        url = f"{api_base.rstrip('/')}/api/v1/services/{uuid}/restart"
+        url = f"{api_base.rstrip('/')}/api/v1/applications/{uuid}/restart"
         
         try:
             response = requests.get(url, headers=headers)
