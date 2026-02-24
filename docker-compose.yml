@@ -1,6 +1,9 @@
 services:
   coolify-restarter:
     build: .
-    env_file: .env
-    restart: unless-stopped
     container_name: coolify-nightly-restarter
+    restart: unless-stopped
+    environment:
+      - TZ=${TZ:-UTC}
+    env_file:
+      - .env
